@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🎂 Happy 26th Birthday, Veronica Khansa! 💝</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&family=Dancing+Script:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(180deg, #0c0015 0%, #1a0a2e 15%, #2d1b4e 40%, #1a0a2e 70%, #0c0015 100%);
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ===== MUSIC PLAYER FLOATING ===== */
+        .music-toggle {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e8618c, #d4447a);
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 5px 25px rgba(232, 97, 140, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .music-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 35px rgba(232, 97, 140, 0.7);
+        }
+
+        .music-toggle.playing {
+            animation: musicPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes musicPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 5px 25px rgba(232, 97, 140, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 5px 40px rgba(232, 97, 140, 0.8), 0 0 60px rgba(232, 97, 140, 0.3);
+            }
+        }
+
+        /* ===== BACKGROUND EFFECTS ===== */
+        .bg-effects {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            animation: floatParticle linear infinite;
+            opacity: 0.15;
+        }
+
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.2;
+            }
+
+            90% {
+                opacity: 0.1;
+            }
+
+            100% {
+                transform: translateY(-10vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-cake {
+            font-size: 70px;
+            margin-bottom: 20px;
+            animation: cakeBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes cakeBounce {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-15px) scale(1.05);
+            }
+        }
+
+        .hero-subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: 22px;
+            color: #f5b8d4;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: fadeIn 1s ease 0.5s forwards;
+        }
+
+        .hero-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 52px;
+            background: linear-gradient(135deg, #f5b8d4, #ffd4e8, #fff, #ffd4e8, #f5b8d4);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s ease-in-out infinite, fadeIn 1s ease 0.8s forwards;
+            opacity: 0;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .hero-age-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 30px;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 170, 0, 0.1));
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 50px;
+            margin: 15px 0 25px;
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            animation: fadeIn 1s ease 1.2s forwards;
+        }
+
+        .hero-age-badge span {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 26px;
+            color: #ffd700;
+        }
+
+        .hero-age-badge small {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 2px;
+        }
+
+        .hero-scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.4);
+            animation: scrollBounce 2s ease-in-out infinite;
+        }
+
+        .hero-scroll-hint::after {
+            content: '';
+            display: block;
+            width: 2px;
+            height: 30px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), transparent);
+            margin: 8px auto 0;
+        }
+
+        @keyframes scrollBounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(8px);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== SECTION BASE ===== */
+        .section {
+            padding: 60px 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 36px;
+            text-align: center;
+            color: #f5b8d4;
+            margin-bottom: 30px;
+            text-shadow: 0 0 30px rgba(245, 184, 212, 0.3);
+        }
+
+        /* ===== MESSAGE SECTION ===== */
+        .message-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 35px 25px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .message-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .message-card .quote-mark {
+            font-size: 50px;
+            line-height: 1;
+            color: rgba(245, 184, 212, 0.3);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .message-card p {
+            font-size: 14px;
+            line-height: 2;
+            color: rgba(255, 255, 255, 0.85);
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .message-card .signature {
+            font-family: 'Great Vibes', cursive;
+            font-size: 28px;
+            color: #f5b8d4;
+            text-align: right;
+            margin-top: 25px;
+        }
+
+        /* Typewriter cursor */
+        .typewriter-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1em;
+            background: #f5b8d4;
+            margin-left: 2px;
+            animation: cursorBlink 0.7s step-end infinite;
+            vertical-align: text-bottom;
+        }
+
+        @keyframes cursorBlink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .message-card p {
+            min-height: 1.5em;
+        }
+
+        .message-card .signature {
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .message-card .signature.show {
+            opacity: 1;
+        }
+
+        /* ===== SCRAPBOOK PHOTO GALLERY ===== */
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            align-items: center;
+            padding: 0 5px;
+        }
+
+        .gallery-section {
+            max-width: 540px;
+            padding: 60px 15px;
+        }
+
+        /* Polaroid card */
+        .polaroid {
+            position: relative;
+            background: #fff;
+            padding: 14px 14px 60px 14px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.15);
+            transition: transform 0.5s ease, box-shadow 0.4s ease;
+            opacity: 0;
+            transform: translateY(40px);
+            width: 100%;
+            max-width: 360px;
+        }
+
+        /* Large polaroid for feature photos */
+        .polaroid-large {
+            max-width: 100%;
+            padding: 10px 10px 55px 10px;
+        }
+
+        .polaroid-large img,
+        .polaroid-large .photo-placeholder {
+            height: 520px !important;
+        }
+
+        .polaroid.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Slight random rotations via nth-child */
+        .polaroid:nth-child(1) {
+            transform: rotate(-2.5deg);
+        }
+
+        .polaroid:nth-child(2) {
+            transform: rotate(1.8deg);
+        }
+
+        .polaroid:nth-child(3) {
+            transform: rotate(-1.2deg);
+        }
+
+        .polaroid:nth-child(4) {
+            transform: rotate(2.8deg);
+        }
+
+        .polaroid:nth-child(5) {
+            transform: rotate(-0.8deg);
+        }
+
+        .polaroid:nth-child(6) {
+            transform: rotate(1.5deg);
+        }
+
+        .polaroid:nth-child(7) {
+            transform: rotate(-2deg);
+        }
+
+        .polaroid:nth-child(8) {
+            transform: rotate(0.6deg);
+        }
+
+        .polaroid:nth-child(9) {
+            transform: rotate(-1.8deg);
+        }
+
+        .polaroid:nth-child(10) {
+            transform: rotate(2.2deg);
+        }
+
+        .polaroid.visible:nth-child(1) {
+            transform: rotate(-2.5deg) translateY(0);
+        }
+
+        .polaroid.visible:nth-child(2) {
+            transform: rotate(1.8deg) translateY(0);
+        }
+
+        .polaroid.visible:nth-child(3) {
+            transform: rotate(-1.2deg) translateY(0);
+        }
+
+        .polaroid.visible:nth-child(4) {
+            transform: rotate(2.8deg) translateY(0);
+        }
+
+        .polaroid.visible:nth-child(5) {
+            transform: rotate(-0.8deg) translateY(0);
+        }
+
+        .polaroid.visible:nth-child(6) {
+            transform: rotate(1.5deg) translateY(0);
+        }
+
+        .polaroid.visible:nth-child(7) {
+            transform: rotate(-2deg) translateY(0);
+        }
+
+        .polaroid.visible:nth-child(8) {
+            transform: rotate(0.6deg) translateY(0);
+        }
+
+        .polaroid.visible:nth-child(9) {
+            transform: rotate(-1.8deg) translateY(0);
+        }
+
+        .polaroid.visible:nth-child(10) {
+            transform: rotate(2.2deg) translateY(0);
+        }
+
+        .polaroid:hover {
+            transform: rotate(0deg) scale(1.03) !important;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+            z-index: 5;
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Polaroid caption area */
+        .polaroid-caption {
+            position: absolute;
+            bottom: 12px;
+            left: 14px;
+            right: 14px;
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 18px;
+            color: #5a3e5c;
+            line-height: 1.3;
+        }
+
+        /* Washi tape strips */
+        .washi-tape {
+            position: absolute;
+            height: 28px;
+            z-index: 10;
+            opacity: 0.88;
+            filter: brightness(1.05);
+        }
+
+        /* Different tape styles */
+        .tape-top-center {
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-1deg);
+            width: 110px;
+        }
+
+        .tape-top-left {
+            top: -10px;
+            left: -12px;
+            transform: rotate(-18deg);
+            width: 90px;
+        }
+
+        .tape-top-right {
+            top: -10px;
+            right: -12px;
+            transform: rotate(15deg);
+            width: 90px;
+        }
+
+        .tape-bottom-right {
+            bottom: 40px;
+            right: -15px;
+            transform: rotate(20deg);
+            width: 85px;
+        }
+
+        /* Tape colors using CSS gradients */
+        .tape-pink {
+            background: repeating-linear-gradient(90deg, rgba(245, 182, 211, 0.85) 0px, rgba(245, 182, 211, 0.85) 4px, rgba(252, 210, 230, 0.85) 4px, rgba(252, 210, 230, 0.85) 8px);
+            border-radius: 2px;
+        }
+
+        .tape-mint {
+            background: repeating-linear-gradient(90deg, rgba(167, 227, 208, 0.85) 0px, rgba(167, 227, 208, 0.85) 4px, rgba(200, 240, 225, 0.85) 4px, rgba(200, 240, 225, 0.85) 8px);
+            border-radius: 2px;
+        }
+
+        .tape-lavender {
+            background: repeating-linear-gradient(90deg, rgba(200, 182, 232, 0.85) 0px, rgba(200, 182, 232, 0.85) 4px, rgba(220, 210, 245, 0.85) 4px, rgba(220, 210, 245, 0.85) 8px);
+            border-radius: 2px;
+        }
+
+        .tape-peach {
+            background: repeating-linear-gradient(90deg, rgba(252, 200, 170, 0.85) 0px, rgba(252, 200, 170, 0.85) 4px, rgba(255, 222, 200, 0.85) 4px, rgba(255, 222, 200, 0.85) 8px);
+            border-radius: 2px;
+        }
+
+        .tape-yellow {
+            background: repeating-linear-gradient(90deg, rgba(252, 232, 140, 0.85) 0px, rgba(252, 232, 140, 0.85) 4px, rgba(255, 242, 180, 0.85) 4px, rgba(255, 242, 180, 0.85) 8px);
+            border-radius: 2px;
+        }
+
+        .tape-blue {
+            background: repeating-linear-gradient(90deg, rgba(160, 200, 240, 0.85) 0px, rgba(160, 200, 240, 0.85) 4px, rgba(195, 220, 250, 0.85) 4px, rgba(195, 220, 250, 0.85) 8px);
+            border-radius: 2px;
+        }
+
+        /* Scrapbook doodle items between photos */
+        .scrapbook-deco {
+            text-align: center;
+            font-size: 24px;
+            letter-spacing: 15px;
+            opacity: 0.5;
+            padding: 5px 0;
+        }
+
+        /* Pin decoration */
+        .pin {
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            z-index: 15;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .pin::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 6px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+        }
+
+        .pin-red {
+            background: radial-gradient(circle at 35% 35%, #ff6b6b, #cc3333);
+        }
+
+        .pin-pink {
+            background: radial-gradient(circle at 35% 35%, #f5a0c0, #d4447a);
+        }
+
+        .pin-gold {
+            background: radial-gradient(circle at 35% 35%, #ffd700, #cc9900);
+        }
+
+        /* Dummy photo placeholder */
+        .photo-placeholder {
+            width: 100%;
+            height: 420px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            position: relative;
+        }
+
+        .photo-placeholder .placeholder-text {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 8px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .photo-placeholder-1 {
+            background: linear-gradient(135deg, #e8618c, #c44b78);
+        }
+
+        .photo-placeholder-2 {
+            background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+        }
+
+        .photo-placeholder-3 {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        .photo-placeholder-4 {
+            background: linear-gradient(135deg, #ec4899, #be185d);
+        }
+
+        .photo-placeholder-5 {
+            background: linear-gradient(135deg, #6366f1, #4338ca);
+        }
+
+        .photo-placeholder-6 {
+            background: linear-gradient(135deg, #14b8a6, #0d9488);
+        }
+
+        .photo-placeholder-7 {
+            background: linear-gradient(135deg, #f43f5e, #e11d48);
+        }
+
+        .photo-placeholder-8 {
+            background: linear-gradient(135deg, #a855f7, #7c3aed);
+        }
+
+        .photo-placeholder-9 {
+            background: linear-gradient(135deg, #fb923c, #ea580c);
+        }
+
+        .photo-placeholder-10 {
+            background: linear-gradient(135deg, #f472b6, #db2777);
+        }
+
+        /* Sticker label on some photos */
+        .sticker {
+            position: absolute;
+            font-size: 28px;
+            z-index: 12;
+            filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+            animation: stickerWobble 4s ease-in-out infinite;
+        }
+
+        @keyframes stickerWobble {
+
+            0%,
+            100% {
+                transform: rotate(-5deg) scale(1);
+            }
+
+            50% {
+                transform: rotate(5deg) scale(1.08);
+            }
+        }
+
+        /* ===== WISHES SECTION ===== */
+        .wishes-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .wish-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.5s ease;
+        }
+
+        .wish-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .wish-item .wish-icon {
+            font-size: 28px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .wish-item .wish-text {
+            font-size: 13px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* ===== CLOSING ===== */
+        .closing {
+            text-align: center;
+            padding: 80px 20px 100px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .closing-heart {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: heartFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes heartFloat {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            25% {
+                transform: translateY(-10px) scale(1.05);
+            }
+
+            75% {
+                transform: translateY(5px) scale(0.98);
+            }
+        }
+
+        .closing-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 38px;
+            color: #f5b8d4;
+            margin-bottom: 10px;
+        }
+
+        .closing-subtext {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 30px;
+        }
+
+        .closing-date {
+            display: inline-block;
+            padding: 10px 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 3px;
+        }
+
+        /* ===== SEPARATOR ===== */
+        .separator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .separator::before,
+        .separator::after {
+            content: '';
+            height: 1px;
+            width: 60px;
+            background: linear-gradient(90deg, transparent, rgba(245, 184, 212, 0.3), transparent);
+        }
+
+        .separator span {
+            font-size: 16px;
+        }
+
+        /* ===== CONFETTI ===== */
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        .confetti {
+            position: absolute;
+            top: -10px;
+            animation: confettiDrop linear forwards;
+        }
+
+        @keyframes confettiDrop {
+            0% {
+                transform: translateY(0) rotateZ(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) rotateZ(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* ===== BACK BUTTON ===== */
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: scale(1.1);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 68px;
+            }
+
+            .hero-subtitle {
+                font-size: 28px;
+            }
+
+            .section {
+                max-width: 600px;
+                padding: 80px 30px;
+            }
+
+            .section-title {
+                font-size: 44px;
+            }
+
+            .message-card {
+                padding: 45px 35px;
+            }
+
+            .message-card p {
+                font-size: 16px;
+            }
+
+            .polaroid img,
+            .polaroid .photo-placeholder {
+                height: 450px;
+            }
+
+            .polaroid-large img,
+            .polaroid-large .photo-placeholder {
+                height: 550px !important;
+            }
+
+            .polaroid {
+                max-width: 400px;
+            }
+
+            .polaroid-large {
+                max-width: 100%;
+            }
+
+            .gallery-section {
+                max-width: 650px;
+            }
+
+            .closing-text {
+                font-size: 48px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .section {
+                max-width: 700px;
+            }
+
+            .hero-title {
+                font-size: 80px;
+            }
+
+            .polaroid img,
+            .polaroid .photo-placeholder {
+                height: 500px;
+            }
+
+            .polaroid-large img,
+            .polaroid-large .photo-placeholder {
+                height: 600px !important;
+            }
+
+            .gallery-section {
+                max-width: 750px;
+            }
+        }
+
+        /* ===== LOADING ===== */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0c0015;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .page-loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 24px;
+            color: #f5b8d4;
+            animation: fadeIn 1s ease infinite alternate;
+        }
+
+        .loader-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .loader-dots span {
+            width: 8px;
+            height: 8px;
+            background: #e8618c;
+            border-radius: 50%;
+            animation: dotBounce 1.4s ease-in-out infinite;
+        }
+
+        .loader-dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .loader-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes dotBounce {
+
+            0%,
+            80%,
+            100% {
+                transform: scale(0.6);
+                opacity: 0.4;
+            }
+
+            40% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-text">Menyiapkan sesuatu yang spesial...</div>
+        <div class="loader-dots">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <!-- Background Effects -->
+    <div class="bg-effects" id="bgEffects"></div>
+
+    <!-- Back Button -->
+    <a href="index.html" class="back-btn" title="Kembali">←</a>
+
+    <!-- Music Toggle -->
+    <button class="music-toggle" id="musicToggle" onclick="toggleMusic()" title="Play/Pause Music">
+        🎵
+    </button>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop autoplay preload="auto">
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Confetti Container -->
+    <div class="confetti-container" id="confettiContainer"></div>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero">
+        <div class="hero-cake">🎂</div>
+        <p class="hero-subtitle">Happy Birthday</p>
+        <h1 class="hero-title">Veronica Khansa</h1>
+        <div class="hero-age-badge">
+            <span>26</span>
+            <small>T H</small>
+        </div>
+        <div class="hero-scroll-hint">Scroll ke bawah ↓</div>
+    </section>
+
+    <!-- ===== MESSAGE SECTION ===== -->
+    <div class="section">
+        <div class="section-title">Untukmu yang Tercinta</div>
+
+        <div class="message-card" id="messageCard" data-animate>
+            <div class="quote-mark">"</div>
+            <p id="msg-1"></p>
+            <p id="msg-2"></p>
+            <p id="msg-3"></p>
+            <p id="msg-4"></p>
+            <p id="msg-5"></p>
+            <div class="signature" id="msgSignature">— With All My Love 💝</div>
+        </div>
+    </div>
+
+    <!-- ===== SEPARATOR ===== -->
+    <div class="separator"><span>💫</span></div>
+
+    <!-- ===== PHOTO GALLERY (SCRAPBOOK) ===== -->
+    <div class="section gallery-section">
+        <div class="section-title">Momen Kita Berdua</div>
+
+        <div class="gallery">
+
+            <!-- Photo 1 (LARGE) -->
+            <div class="polaroid polaroid-large" data-animate>
+                <div class="washi-tape tape-top-center tape-pink"></div>
+                <!-- GANTI: Hapus div.photo-placeholder, uncomment img -->
+                <!-- <img src="foto1.jpg" alt="Foto 1"> -->
+                <div class="photo-placeholder photo-placeholder-1">
+                    📸 <span class="placeholder-text">Foto 1</span>
+                </div>
+                <div class="polaroid-caption">Momen pertama kita 💕</div>
+                <div class="sticker" style="bottom:55px; right:-8px; animation-delay:0.3s;">🌸</div>
+            </div>
+
+            <div class="scrapbook-deco">✦ ♡ ✦</div>
+
+            <!-- Photo 2 -->
+            <div class="polaroid" data-animate>
+                <div class="washi-tape tape-top-left tape-mint"></div>
+                <div class="washi-tape tape-top-right tape-lavender"></div>
+                <div class="photo-placeholder photo-placeholder-2">
+                    📸 <span class="placeholder-text">Foto 2</span>
+                </div>
+                <div class="polaroid-caption">Senyummu yang terindah 🌸</div>
+            </div>
+
+            <!-- Photo 3 -->
+            <div class="polaroid" data-animate>
+                <div class="washi-tape tape-top-center tape-peach"></div>
+                <div class="pin pin-gold" style="top:-10px; right:25px;"></div>
+                <div class="photo-placeholder photo-placeholder-3">
+                    📸 <span class="placeholder-text">Foto 3</span>
+                </div>
+                <div class="polaroid-caption">Tawa kita berdua ✨</div>
+                <div class="sticker" style="top:-18px; left:-10px; animation-delay:0.8s;">💫</div>
+            </div>
+
+            <div class="scrapbook-deco">♡ ✧ ♡</div>
+
+            <!-- Photo 4 (LARGE) -->
+            <div class="polaroid polaroid-large" data-animate>
+                <div class="washi-tape tape-top-left tape-yellow"></div>
+                <div class="photo-placeholder photo-placeholder-4">
+                    📸 <span class="placeholder-text">Foto 4</span>
+                </div>
+                <div class="polaroid-caption">Hari spesial bersama 💖</div>
+            </div>
+
+            <!-- Photo 5 -->
+            <div class="polaroid" data-animate>
+                <div class="washi-tape tape-top-center tape-blue"></div>
+                <div class="washi-tape tape-bottom-right tape-pink"></div>
+                <div class="photo-placeholder photo-placeholder-5">
+                    📸 <span class="placeholder-text">Foto 5</span>
+                </div>
+                <div class="polaroid-caption">Kenangan terindah 💫</div>
+                <div class="sticker" style="bottom:55px; left:-12px; animation-delay:1.2s;">🦋</div>
+            </div>
+
+            <div class="scrapbook-deco">✦ ♡ ✦</div>
+
+            <!-- Photo 6 -->
+            <div class="polaroid" data-animate>
+                <div class="washi-tape tape-top-left tape-lavender"></div>
+                <div class="pin pin-pink" style="top:-8px; left:50%; margin-left:-11px;"></div>
+                <div class="photo-placeholder photo-placeholder-6">
+                    📸 <span class="placeholder-text">Foto 6</span>
+                </div>
+                <div class="polaroid-caption">Petualangan kita 🌟</div>
+            </div>
+
+            <!-- Photo 7 (LARGE) -->
+            <div class="polaroid polaroid-large" data-animate>
+                <div class="washi-tape tape-top-center tape-yellow"></div>
+                <div class="washi-tape tape-top-right tape-mint"></div>
+                <div class="photo-placeholder photo-placeholder-7">
+                    📸 <span class="placeholder-text">Foto 7</span>
+                </div>
+                <div class="polaroid-caption">Cinta yang tumbuh 🌹</div>
+                <div class="sticker" style="top:-15px; right:-10px; animation-delay:0.5s;">✨</div>
+            </div>
+
+            <div class="scrapbook-deco">♡ ✧ ♡</div>
+
+            <!-- Photo 8 -->
+            <div class="polaroid" data-animate>
+                <div class="washi-tape tape-top-left tape-peach"></div>
+                <div class="washi-tape tape-top-right tape-pink"></div>
+                <div class="photo-placeholder photo-placeholder-8">
+                    📸 <span class="placeholder-text">Foto 8</span>
+                </div>
+                <div class="polaroid-caption">Kebersamaan yang indah 💑</div>
+            </div>
+
+            <!-- Photo 9 -->
+            <div class="polaroid" data-animate>
+                <div class="washi-tape tape-top-center tape-lavender"></div>
+                <div class="pin pin-red" style="top:-10px; left:20px;"></div>
+                <div class="photo-placeholder photo-placeholder-9">
+                    📸 <span class="placeholder-text">Foto 9</span>
+                </div>
+                <div class="polaroid-caption">Senyum termanis 😊</div>
+                <div class="sticker" style="bottom:55px; right:-8px; animation-delay:1.5s;">💕</div>
+            </div>
+
+            <div class="scrapbook-deco">✦ ♡ ✦</div>
+
+            <!-- Photo 10 (LARGE) -->
+            <div class="polaroid polaroid-large" data-animate>
+                <div class="washi-tape tape-top-left tape-pink"></div>
+                <div class="washi-tape tape-top-right tape-yellow"></div>
+                <div class="pin pin-gold" style="top:-10px; left:50%; margin-left:-11px;"></div>
+                <div class="photo-placeholder photo-placeholder-10">
+                    📸 <span class="placeholder-text">Foto 10</span>
+                </div>
+                <div class="polaroid-caption">Selamanya bersamamu 💝</div>
+                <div class="sticker" style="top:-20px; left:-12px; animation-delay:0.2s;">🌸</div>
+                <div class="sticker" style="bottom:50px; right:-10px; animation-delay:1s;">🦋</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ===== SEPARATOR ===== -->
+    <div class="separator"><span>💖</span></div>
+
+    <!-- ===== WISHES SECTION ===== -->
+    <div class="section">
+        <div class="section-title">Doa & Harapanku</div>
+
+        <div class="wishes-list">
+            <div class="wish-item" data-animate>
+                <div class="wish-icon">🌟</div>
+                <div class="wish-text">Semoga sehat selalu dan selalu dilimpahi kebahagiaan di setiap langkahmu.</div>
+            </div>
+            <div class="wish-item" data-animate>
+                <div class="wish-icon">🎯</div>
+                <div class="wish-text">Semoga semua cita-cita dan impianmu tercapai di tahun ini dan seterusnya.</div>
+            </div>
+            <div class="wish-item" data-animate>
+                <div class="wish-icon">💪</div>
+                <div class="wish-text">Semoga selalu diberi kekuatan untuk menghadapi setiap tantangan hidup.</div>
+            </div>
+            <div class="wish-item" data-animate>
+                <div class="wish-icon">💖</div>
+                <div class="wish-text">Semoga cinta kita semakin kuat, dalam, dan abadi selamanya.</div>
+            </div>
+            <div class="wish-item" data-animate>
+                <div class="wish-icon">✨</div>
+                <div class="wish-text">Semoga rezeki dan berkah selalu mengalir untukmu dan orang-orang tercinta.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== CLOSING ===== -->
+    <div class="closing">
+        <div class="closing-heart">💝</div>
+        <div class="closing-text">I Love You</div>
+        <div class="closing-subtext">Selamanya dan selamanya. Selamat ulang tahun, sayangku. 🎂</div>
+        <div class="closing-date">01 • MARET • 2026</div>
+    </div>
+
+    <script>
+        // ===== PAGE LOADER =====
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                document.getElementById('pageLoader').classList.add('hidden');
+                triggerConfetti();
+                tryAutoplayMusic();
+            }, 1500);
+        });
+
+        // ===== BACKGROUND PARTICLES =====
+        function createParticles() {
+            const container = document.getElementById('bgEffects');
+            const emojis = ['💕', '✨', '💖', '🌸', '💫', '💗', '🌹'];
+
+            for (let i = 0; i < 25; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                p.style.left = Math.random() * 100 + '%';
+                p.style.fontSize = (Math.random() * 16 + 10) + 'px';
+                p.style.animationDuration = (Math.random() * 15 + 15) + 's';
+                p.style.animationDelay = (Math.random() * 15) + 's';
+                container.appendChild(p);
+            }
+        }
+
+        // ===== TYPEWRITER FOR MESSAGE =====
+        var typewriterMessages = [
+            'Selamat ulang tahun yang ke-26, Veronica Khansa! 🎉',
+            'Di hari yang spesial ini, aku ingin kamu tahu betapa berharganya kehadiranmu dalam hidupku. Setiap hari bersamamu adalah anugerah yang tidak pernah aku bayangkan sebelumnya. 💖',
+            'Terima kasih sudah menjadi alasan terbaik untuk tersenyum, menjadi tempat ternyaman untuk pulang, dan menjadi motivasi terbesar untuk menjadi lebih baik.',
+            'Semoga di umurmu yang ke-26 ini, segala mimpi dan harapanmu terkabul, kebahagiaanmu berlipat ganda, dan cinta kita semakin kuat setiap harinya. 🌸✨',
+            'Aku mencintaimu lebih dari yang bisa kata-kata ungkapkan. 💕'
+        ];
+        var typewriterStarted = false;
+
+        function typeText(elementId, text, speed, callback) {
+            var el = document.getElementById(elementId);
+            var i = 0;
+            // Add cursor
+            var cursor = document.createElement('span');
+            cursor.className = 'typewriter-cursor';
+            el.textContent = '';
+            el.appendChild(cursor);
+
+            var interval = setInterval(function () {
+                if (i < text.length) {
+                    // Insert text before cursor
+                    el.insertBefore(document.createTextNode(text.charAt(i)), cursor);
+                    i++;
+                } else {
+                    clearInterval(interval);
+                    // Remove cursor from this paragraph
+                    if (cursor.parentNode) cursor.remove();
+                    if (callback) callback();
+                }
+            }, speed);
+        }
+
+        function startTypewriter() {
+            if (typewriterStarted) return;
+            typewriterStarted = true;
+
+            var msgIndex = 0;
+            function typeNext() {
+                if (msgIndex < typewriterMessages.length) {
+                    var id = 'msg-' + (msgIndex + 1);
+                    var text = typewriterMessages[msgIndex];
+                    var speed = msgIndex === 0 ? 35 : 25; // First paragraph slower
+                    msgIndex++;
+                    typeText(id, text, speed, function () {
+                        setTimeout(typeNext, 400); // Pause between paragraphs
+                    });
+                } else {
+                    // Show signature with fade
+                    setTimeout(function () {
+                        document.getElementById('msgSignature').classList.add('show');
+                    }, 500);
+                }
+            }
+            typeNext();
+        }
+
+        // ===== SCROLL ANIMATIONS =====
+        function initScrollAnimations() {
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Trigger typewriter when message card enters view
+                        if (entry.target.id === 'messageCard') {
+                            setTimeout(startTypewriter, 600);
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            document.querySelectorAll('[data-animate]').forEach(function (el) {
+                observer.observe(el);
+            });
+        }
+
+        // ===== CONFETTI =====
+        function triggerConfetti() {
+            var container = document.getElementById('confettiContainer');
+            var colors = ['#e8618c', '#ffd700', '#f5b8d4', '#ff6b9d', '#c084fc', '#60a5fa', '#34d399', '#fbbf24', '#f472b6', '#a78bfa'];
+            var shapes = ['●', '■', '▲', '♥', '★'];
+
+            for (var i = 0; i < 100; i++) {
+                (function (idx) {
+                    setTimeout(function () {
+                        var confetti = document.createElement('div');
+                        confetti.className = 'confetti';
+                        confetti.textContent = shapes[Math.floor(Math.random() * shapes.length)];
+                        confetti.style.left = Math.random() * 100 + '%';
+                        confetti.style.color = colors[Math.floor(Math.random() * colors.length)];
+                        confetti.style.fontSize = (Math.random() * 14 + 8) + 'px';
+                        confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                        container.appendChild(confetti);
+                        setTimeout(function () { confetti.remove(); }, 5000);
+                    }, idx * 30);
+                })(i);
+            }
+        }
+
+        // ===== MUSIC CONTROL =====
+        var isPlaying = false;
+        var bgMusic = document.getElementById('bgMusic');
+        var musicBtn = document.getElementById('musicToggle');
+        var hasAutoPlayed = false;
+
+        function startMusic() {
+            if (hasAutoPlayed) return;
+            bgMusic.play().then(function () {
+                hasAutoPlayed = true;
+                isPlaying = true;
+                musicBtn.textContent = '🎶';
+                musicBtn.classList.add('playing');
+                // Remove fallback listeners once playing
+                document.removeEventListener('click', startMusic);
+                document.removeEventListener('touchstart', startMusic);
+                document.removeEventListener('scroll', startMusic);
+            }).catch(function () {
+                // Still blocked, will try again on next interaction
+            });
+        }
+
+        function toggleMusic() {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicBtn.textContent = '🎵';
+                musicBtn.classList.remove('playing');
+                isPlaying = false;
+            } else {
+                bgMusic.play().then(function () {
+                    musicBtn.textContent = '🎶';
+                    musicBtn.classList.add('playing');
+                    isPlaying = true;
+                    hasAutoPlayed = true;
+                }).catch(function () { });
+            }
+        }
+
+        function tryAutoplayMusic() {
+            // Try autoplay immediately
+            startMusic();
+            // Fallback: play on first user interaction (scroll, click, touch)
+            document.addEventListener('click', startMusic, { once: false });
+            document.addEventListener('touchstart', startMusic, { once: false });
+            document.addEventListener('scroll', startMusic, { once: false });
+        }
+
+        // ===== INIT =====
+        createParticles();
+        initScrollAnimations();
+    </script>
+</body>
+
+</html>
